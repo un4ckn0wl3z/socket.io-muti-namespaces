@@ -12,13 +12,13 @@ app.get('/admin', function(req, res){
    
 var nsp_client = io.of('/client');
 nsp_client.on('connection', function(socket){
-   console.log('someone connected');
+   console.log('client connected');
    nsp_client.emit('hi', 'Hello everyone in #client-ns!');
 });
 
 var nsp_admin = io.of('/admin');
 nsp_admin.on('connection', function(socket){
-   console.log('someone connected');
+   console.log('admin connected');
    nsp_admin.emit('hi', 'Hello everyone in #admin-ns!');
 });
 http.listen(3000, function(){
